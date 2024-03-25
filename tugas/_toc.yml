@@ -2,13 +2,14 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: tugas-pengantar
+root: daftar_isi
 chapters:
 - file: sistem_linear
   sections:
-  - file: sistem_linear/tugas1
   - file: sistem_linear/penyelesaian_sistem_linear
+  - file: sistem_linear/tugas1
 - file: aljabar
   sections:
   - file: aljabar_sub/operasi_matrix
   - file: aljabar_sub/matrix_tranpose
+  - file: aljabar_sub/matrix_elementer
