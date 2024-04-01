@@ -13,3 +13,4 @@ chapters:
   - file: aljabar_sub/operasi_matrix
   - file: aljabar_sub/matrix_tranpose
   - file: aljabar_sub/matrix_elementer
+  - file: aljabar_sub/matrix_inverse
