@@ -14,3 +14,6 @@ chapters:
   - file: aljabar_sub/matrix_tranpose
   - file: aljabar_sub/matrix_elementer
   - file: aljabar_sub/matrix_inverse
+- file: determinan
+  sections:
+  - file: determinan/formula_determinan

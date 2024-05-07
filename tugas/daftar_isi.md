@@ -23,4 +23,14 @@ Sistem linear
 
 Aljabar Linear Matriks
 :::
+
+:::
+
+:::{grid-item-card}
+:link: determinan
+:link-type: doc
+:class-header: bg-light
+
+Determinan
+:::
 ::::
