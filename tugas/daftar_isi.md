@@ -33,4 +33,12 @@ Aljabar Linear Matriks
 
 Determinan
 :::
+
+:::{grid-item-card}
+:link: eign_value_eign_vector
+:link-type: doc
+:class-header: bg-light
+
+EignValue & EignVector
+:::
 ::::

@@ -17,3 +17,4 @@ chapters:
 - file: determinan
   sections:
   - file: determinan/formula_determinan
+- file: eign_value_eign_vector
