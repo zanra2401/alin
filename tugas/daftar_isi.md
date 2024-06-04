@@ -41,4 +41,20 @@ Determinan
 
 EignValue & EignVector
 :::
+
+:::{grid-item-card}
+:link: transformasi_linear
+:link-type: doc
+:class-header: bg-light
+
+Transformasi Linear
+:::
+
+:::{grid-item-card}
+:link: Aplikasi_KAL
+:link-type: doc
+:class-header: bg-light
+
+Aplikasi KAL
+:::
 ::::
