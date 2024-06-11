@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contoh Aplikasi Komputasi Al-jabar Linear &#8212; Komputasi Aljabar Linear</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Aplikasi_KAL';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Transformasi Linear" href="transformasi_linear.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="daftar_isi.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo .jpg" class="logo__image only-light" alt="Komputasi Aljabar Linear - Home"/>
+    <script>document.write(`<img src="_static/logo .jpg" class="logo__image only-dark" alt="Komputasi Aljabar Linear - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="daftar_isi.html">
+                    KAL
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="sistem_linear.html">Sistem Linear</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sistem_linear/penyelesaian_sistem_linear.html">Penyelesaian Sistem Persamaan Linear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sistem_linear/tugas1.html">Menggambar Bidang pada Ruang Tiga Dimensi menggunakan Matplotlib</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="aljabar.html">Aljabar Linear Matrik</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="aljabar_sub/operasi_matrix.html">Operasi Operasi Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aljabar_sub/matrix_tranpose.html">Matrix Transponse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aljabar_sub/matrix_elementer.html">Matrix elementer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aljabar_sub/matrix_inverse.html">Matrix Inverse</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="determinan.html">Determinan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="determinan/formula_determinan.html">Formula Determinan</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="eign_value_eign_vector.html">Eigen Value Eigen Vector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformasi_linear.html">Transformasi Linear</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contoh Aplikasi Komputasi Al-jabar Linear</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/zanra2401/alin/blob/master/tugas/Aplikasi_KAL.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zanra2401/alin" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zanra2401/alin/issues/new?title=Issue%20on%20page%20%2FAplikasi_KAL.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Aplikasi_KAL.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contoh Aplikasi Komputasi Al-jabar Linear</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">Page Rank</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="contoh-aplikasi-komputasi-al-jabar-linear">
+<h1>Contoh Aplikasi Komputasi Al-jabar Linear<a class="headerlink" href="#contoh-aplikasi-komputasi-al-jabar-linear" title="Link to this heading">#</a></h1>
+<section id="page-rank">
+<h2>Page Rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h2>
+<p>Algoritma PageRank atau algoritma Google diperkenalkan oleh Lary Page, salah satu pendiri Google. Ini pertama kali digunakan untuk menentukan peringkat halaman web di mesin pencari Google. Saat ini, semakin banyak digunakan di berbagai bidang, misalnya dalam menentukan peringkat pengguna di media sosial.</p>
+<p>di sini kita akan melakukan page ranking menggunakan algoritma pagerank</p>
+<p>web dapat di representasikan sebagai graph (graph merupah struktur data yang di representasikan oleh node dan edge) berarah node mewakili halaman web sedangkan edge mewakili hubungan antara dua node atau halaman web</p>
+<p>perhatikan graph di bawah</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">DG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">DG</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>  <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">DG</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="n">subax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_shell</span><span class="p">(</span><span class="n">DG</span><span class="p">,</span> <span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)],</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3f6aead5701c01da326e9e35f4d7182f965faa935345cef277510a659e8a80aa.png" src="_images/3f6aead5701c01da326e9e35f4d7182f965faa935345cef277510a659e8a80aa.png" />
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[
+r_j = \sum_{i -&gt; j} \frac{r_i}{degreeout_{r_i}}
+\]</div>
+<p>dimana <span class="math notranslate nohighlight">\(r_{i}\)</span> adalah skor dari node <span class="math notranslate nohighlight">\(i\)</span> dan <span class="math notranslate nohighlight">\(degreeout_{r_i}\)</span> derajat keluarnya.</p>
+<p>dari graph di atas di dapatkan persamaan</p>
+<p><span class="math notranslate nohighlight">\(r_1 = \frac{r_2}{1} + \frac{r_3}{2} + \frac{r_4}{2}\)</span><br />
+<span class="math notranslate nohighlight">\(r_2 = 0\)</span><br />
+<span class="math notranslate nohighlight">\(r_3 = \frac{r_1}{1}  + \frac{4}{2}\)</span><br />
+<span class="math notranslate nohighlight">\(r_4 = \frac{r_3}{2}\)</span></p>
+<p>Bentuk Matrix dari persamaan di atas:</p>
+<p><span class="math notranslate nohighlight">\(
+A = \begin{bmatrix}
+    0 &amp; 1 &amp; 1/2 &amp; 1/2 \\
+    0 &amp; 0 &amp; 0 &amp; 0 \\
+    1 &amp; 0 &amp; 0 &amp; 1/2 \\
+    0 &amp; 0 &amp; 1/2 &amp; 0
+\end{bmatrix}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+V_0 = \begin{bmatrix}
+    0.25 \\
+    0.25 \\
+    0.25 \\
+    0.25
+\end{bmatrix}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+V_1 = AV_0 = \begin{bmatrix}
+    0.5 \\
+    0 \\
+    0.375 \\
+    0.125
+\end{bmatrix}
+\)</span></p>
+<p>Mencari selisih antara v1 dan v0<br />
+<span class="math notranslate nohighlight">\(
+    V_1 - V_0 = \begin{bmatrix}
+        0.25 \\
+        -0.25 \\
+        0.125 \\
+        -0.125
+    \end{bmatrix}
+\)</span></p>
+<p>Mencari nilai convergence kita akan menetapkan nilai toleransinya 0.5 jika nilai convergence nya di bawah 0.5 maka kita tidak akan mencari vbaru selanjutnya jika nilai convergence nya di atas 0.5 maka kita akan mencari nilai vbaru selanjutnya</p>
+<p><span class="math notranslate nohighlight">\(0.25^2 + (-0.25)^2 + 0.125^2 + (-0.125)^2\)</span><br />
+<span class="math notranslate nohighlight">\(= 0.0625 + 0.0625 + 0.015625 + 0.015625\)</span><br />
+<span class="math notranslate nohighlight">\(= 0.15625\)</span></p>
+<p>di karenakan 0.15625 lebih kecil dari 0.5 maka kita berhenti</p>
+<p>dan kita dapat mengurutkan ranking page nya berdasarkan V_1 jika nilai nya makin tinggi maka makin berpengaruh</p>
+<p><span class="math notranslate nohighlight">\(
+V_1 =  \begin{bmatrix}
+    0.5 \\
+    0 \\
+    0.375 \\
+    0.125
+\end{bmatrix}
+\)</span></p>
+<p>Jadi urutan ranking dari halaman halaman web di atas adalah</p>
+<p>urutan pertama adalah = r1<br />
+urutan kedua adalah = r3<br />
+urutan ketuga adlah = r4<br />
+dan urutan terakhir adalah = r2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># KAL</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># data seperti di contoh di atas</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">Av0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">]])</span>
+
+<span class="c1"># data yang berbeda</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">Bv0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">]])</span>
+
+
+<span class="k">def</span> <span class="nf">kaliMatrik</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">vlama</span><span class="p">):</span>
+  <span class="c1"># mengkalikan matrix dengan vlama</span>
+  <span class="n">v</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@vlama</span>
+  <span class="k">return</span> <span class="n">v</span>
+
+<span class="k">def</span> <span class="nf">convergen</span><span class="p">(</span><span class="n">vlama</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">toleransi</span><span class="p">):</span>
+    <span class="c1"># menghitung selisih antara vbaru dan vlama</span>
+    <span class="n">selisih</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">vlama</span>
+    <span class="c1"># menghitung nilai convergen nya</span>
+    <span class="n">convergen</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">selisih</span><span class="p">:</span>
+      <span class="n">convergen</span> <span class="o">+=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+    <span class="c1"># mengembalikan true jika convergen kurang dari nilai toleransi jika tidak false</span>
+    <span class="k">return</span> <span class="n">convergen</span> <span class="o">&lt;</span> <span class="n">toleransi</span>
+
+<span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="n">numpy_arr</span><span class="p">):</span>
+  <span class="c1"># sorting data ranking menggunakan algoritma bubble sort</span>
+  <span class="nb">sorted</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">rank</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="nb">iter</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">numpy_arr</span><span class="p">:</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">rank</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">iter</span><span class="p">)</span>
+    <span class="nb">iter</span> <span class="o">+=</span> <span class="mi">1</span>
+  
+  
+  <span class="k">while</span> <span class="nb">sorted</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">isSwap</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="n">rank</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">rank</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rank</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">rank</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">isSwap</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">if</span> <span class="n">isSwap</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+      <span class="nb">sorted</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">rank</span>
+
+
+<span class="c1"># melakukan ranking </span>
+<span class="k">def</span> <span class="nf">ranking</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">toleransi</span><span class="p">):</span>
+    <span class="n">vlama</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">coverage</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">perulangan</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># jika coverage true perulangan berhenti</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">coverage</span><span class="p">:</span>
+        <span class="c1"># mencari vbaru</span>
+        <span class="n">vbaru</span> <span class="o">=</span> <span class="n">kaliMatrik</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">vlama</span><span class="p">)</span>
+        <span class="c1"># mencari selisih dan membadingkan nya dengan nilai toleransi </span>
+        <span class="c1"># jika nilai convergen lebih kecil dari nilai toleransi mengubah coverage menjadi True</span>
+        <span class="n">coverage</span> <span class="o">=</span> <span class="n">convergen</span><span class="p">(</span><span class="n">vlama</span><span class="p">,</span> <span class="n">vbaru</span><span class="p">,</span> <span class="n">toleransi</span><span class="p">)</span>
+        <span class="n">vlama</span> <span class="o">=</span> <span class="n">vbaru</span>
+        <span class="n">perulangan</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># mengembalikan jumlah looping dan v terakhir</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">vbaru</span><span class="p">,</span> <span class="n">perulangan</span><span class="p">)</span>
+
+<span class="c1"># data yang sama seperti contoh di atas</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data yang sama dengan contoh di atas&quot;</span><span class="p">)</span>
+<span class="n">ranking1</span> <span class="o">=</span> <span class="n">ranking</span><span class="p">(</span><span class="n">Av0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah perulangan: &quot;</span><span class="p">,</span> <span class="n">ranking1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ranking data: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ranking1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ranking: &quot;</span><span class="p">,</span> <span class="n">sort</span><span class="p">(</span><span class="n">ranking1</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># data yang berbeda </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data yang berbeda&quot;</span><span class="p">)</span>
+<span class="n">ranking2</span> <span class="o">=</span> <span class="n">ranking</span><span class="p">(</span><span class="n">Bv0</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mf">0.00001</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah perulangan: &quot;</span><span class="p">,</span> <span class="n">ranking2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ranking data: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ranking2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ranking: &quot;</span><span class="p">,</span> <span class="n">sort</span><span class="p">(</span><span class="n">ranking2</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data yang sama dengan contoh di atas
+jumlah perulangan:  1
+ranking data: 
+ [[0.5  ]
+ [0.   ]
+ [0.375]
+ [0.125]]
+ranking:  [1, 3, 4, 2]
+
+data yang berbeda
+jumlah perulangan:  9
+ranking data: 
+ [[0.38657407]
+ [0.12890625]
+ [0.29065394]
+ [0.19386574]]
+ranking:  [1, 3, 4, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="transformasi_linear.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Transformasi Linear</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">Page Rank</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ZANRA2401
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
